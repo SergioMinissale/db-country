@@ -1,37 +1,38 @@
 package org.generation.italy;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
 
 public class Country {
 	// attributi
-	private int country_id;
+	private int countryId;
 	private String name;
 	private int area;
-	private LocalDateTime national_day;
-	private String country_code2;
-	private String country_code3;
-	private int region_id;
+	private java.sql.Date nationalDay;
+	private String countryCode2;
+	private String countryCode3;
+	private int regionId;
 
 	// costruttore
-	public Country(int country_id, String name, int area, LocalDateTime national_day, String country_code2,
-			String country_code3, int region_id) {
+	public Country(int countryId, String name, int area, java.sql.Date nationalDay, String countryCode2,
+			String countryCode3, int regionId) {
 		super();
-		this.country_id = country_id;
+		this.countryId = countryId;
 		this.name = name;
 		this.area = area;
-		this.national_day = national_day;
-		this.country_code2 = country_code2;
-		this.country_code3 = country_code3;
-		this.region_id = region_id;
+		this.nationalDay = nationalDay;
+		this.countryCode2 = countryCode2;
+		this.countryCode3 = countryCode3;
+		this.regionId = regionId;
 	}
 
 	// Getter e Setter
-	public int getCountry_id() {
-		return country_id;
+	public int getCountryId() {
+		return countryId;
 	}
 
-	public void setCountry_id(int country_id) {
-		this.country_id = country_id;
+	public void setCountryId(int countryId) {
+		this.countryId = countryId;
 	}
 
 	public String getName() {
@@ -50,36 +51,40 @@ public class Country {
 		this.area = area;
 	}
 
-	public LocalDateTime getNational_day() {
-		return national_day;
+	public java.sql.Date getNationalDay() {
+		return nationalDay;
 	}
 
-	public void setNational_day(LocalDateTime national_day) {
-		this.national_day = national_day;
+	public void setNationalDay(java.sql.Date nationalDay) {
+		this.nationalDay = nationalDay;
 	}
 
-	public String getCountry_code2() {
-		return country_code2;
+	public String getCountryCode2() {
+		return countryCode2;
 	}
 
-	public void setCountry_code2(String country_code2) {
-		this.country_code2 = country_code2;
+	public void setCountryCode2(String countryCode2) {
+		this.countryCode2 = countryCode2;
 	}
 
-	public String getCountry_code3() {
-		return country_code3;
+	public String getCountryCode3() {
+		return countryCode3;
 	}
 
-	public void setCountry_code3(String country_code3) {
-		this.country_code3 = country_code3;
+	public void setCountryCode3(String countryCode3) {
+		this.countryCode3 = countryCode3;
 	}
 
-	public int getRegion_id() {
-		return region_id;
+	public int getRegionId() {
+		return regionId;
 	}
 
-	public void setRegion_id(int region_id) {
-		this.region_id = region_id;
+	public void setRegionId(int regionId) {
+		this.regionId = regionId;
 	}
+
+	
+
+
 
 }
