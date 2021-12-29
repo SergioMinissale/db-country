@@ -20,7 +20,7 @@ public class main {
 			Country sceltaCountry = selectCountryById(con, scan);
 			if (sceltaCountry != null) {
 				System.out.println("La tua scelta è: " + sceltaCountry.getName());
-				
+
 			}
 
 		} catch (SQLException e) {
@@ -45,8 +45,7 @@ public class main {
 			try (ResultSet rsCountry = psCountry.executeQuery()) {
 				if (rsCountry.next()) {
 					sceltaCountry = new Country(rsCountry.getInt(1), rsCountry.getString(2), rsCountry.getInt(3),
-							rsCountry.getDate(4), rsCountry.getString(5), rsCountry.getString(6),
-							rsCountry.getInt(7));
+							rsCountry.getDate(4), rsCountry.getString(5), rsCountry.getString(6), rsCountry.getInt(7));
 				}
 
 			}
@@ -54,22 +53,24 @@ public class main {
 
 		return sceltaCountry;
 	}
+
 	// metodo UpdateCountry
-	private static void updateCountry(Connection con, Country country) throws SQLException {
+	private static int updateCountry(Connection con, Country country) throws SQLException {
 		String query2 = "update countries\r\n"
 				+ "set country_id = ?,name = ? , area =?,national_day =?,country_code2 =?,country_code3 =?,region_id =?\r\n"
 				+ "where country_id =?;";
-		try(PreparedStatement psUpdateCountry = con.prepareStatement(query2)) {
+		int result = 0;
+		try (PreparedStatement psUpdateCountry = con.prepareStatement(query2)) {
 			psUpdateCountry.setInt(1, country.getCountryId());
 			psUpdateCountry.setString(2, country.getName());
 			psUpdateCountry.setInt(3, country.getArea());
 			psUpdateCountry.setDate(4, country.getNationalDay());
 			psUpdateCountry.setString(5, country.getCountryCode2());
-			psUpdateCountry.setString(6, country.getCountryCode3());	
+			psUpdateCountry.setString(6, country.getCountryCode3());
 			psUpdateCountry.setInt(7, country.getRegionId());
-			int result = psUpdateCountry.executeUpdate();
+			result = psUpdateCountry.executeUpdate();
 		}
-		
+		return result;
 	}
 
 }

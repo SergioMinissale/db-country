@@ -83,8 +83,4 @@ public class Country {
 		this.regionId = regionId;
 	}
 
-	
-
-
-
 }
